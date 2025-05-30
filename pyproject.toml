@@ -1,0 +1,14 @@
+[project]
+name = "research_assistant"
+version = "0.1.0"
+description = "Research Assistant"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "crewai",
+    "crewai-tools",
+    "streamlit",
+    "exa-py",
+    "requests",
+    "python-dotenv"
+]
