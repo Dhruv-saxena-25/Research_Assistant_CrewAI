@@ -76,9 +76,9 @@ if start_research:
             
             # Single output capture context.
             with capture_output(output_container):
-                researcher = create_researcher(llm, selection)
-                task = create_research_task(task_description=task_description, llm=llm, selection=selection)
-                result = run_research(llm, selection)
+                researcher = create_researcher(selection)
+                task = create_research_task(task_description, selection)
+                result = run_research(task_description, selection)
                 status.update(label="✅ Research completed!", state="complete", expanded=False)
         except Exception as e:
             status.update(label="❌ Error occurred", state="error")

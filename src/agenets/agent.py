@@ -2,7 +2,7 @@ from crewai import Agent
 from src.llms.init_llms import get_llm
 from src.tools.custom_tool import EXAAnswerTool
 
-def create_researcher(llm, selection):
+def create_researcher(selection):
     
     researcher = Agent(
         role= "Research Analyst",

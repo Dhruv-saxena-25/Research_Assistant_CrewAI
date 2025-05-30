@@ -4,10 +4,10 @@ from src.agenets.agent import create_researcher
 
 
 
-def run_research(llm, selection):
+def run_research(task_description, selection):
     
-    researcher = create_researcher(llm, selection)
-    task = create_research_task()
+    researcher = create_researcher(selection)
+    task = create_research_task(task_description, selection)
     
     crew = Crew(
         agents= [researcher],

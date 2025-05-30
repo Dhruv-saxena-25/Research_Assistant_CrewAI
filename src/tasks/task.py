@@ -1,9 +1,9 @@
 from crewai import Task
 from src.agenets.agent import create_researcher
 
-def create_research_task(task_description, llm, selection):
+def create_research_task(task_description, selection):
     
-    researcher = create_researcher(llm, selection)
+    researcher = create_researcher(selection)
     return Task(
         description=task_description,
         expected_output="""A comprehensive research report for the year 2025. 
