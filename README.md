@@ -48,6 +48,7 @@ uv pip install <package_name>
 ```bash
 uv pip install -r requirements.txt
 ```
+---
 
 ### To recreate your environment elsewhere (e.g. on CI or another machine), install exactly what’s in the lockfile:
 
@@ -60,3 +61,21 @@ uv sync
 ```bash
 uv lock
 ```
+
+--- 
+
+# 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+# 🙏 Acknowledgments
+
+- [CrewAI](https://crewai.com) for the AI agent framework
+- [Exa](https://exa.ai) for advanced search capabilities
+- [Streamlit](https://streamlit.io) for the web interface
+
+---
+
+Made by Dhruv Saxena using CrewAI, Exa, and Streamlit
