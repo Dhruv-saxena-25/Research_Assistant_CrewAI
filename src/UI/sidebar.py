@@ -42,7 +42,7 @@ def render_sidebar():
         with st.expander("🤖 Model Selection", expanded=True):
             provider = st.radio(
                 "Select LLM Provider",
-                ["OpenAI", "GROQ", "Ollama"],
+                ["OpenAI", "GROQ", "Ollama", "Google"],
                 help="Choose which Large Language Model provider to use",
                 horizontal=True
             )
@@ -57,7 +57,21 @@ def render_sidebar():
                     model = st.text_input("Enter your custom OpenAI model:", value="", help="Specify your custom model string")
                 else:
                     model = model_option
-                
+             
+            elif provider == "Google":
+                model = st.selectbox(
+                    "Select GROQ Model",
+                    [
+                        "gemini-1.5-pro",
+                        "gemini-1.5-flash",
+                        "gemini-2.0-flash",
+                        "gemini-2.5-flash-preview-04-17"
+                    ],
+                    index=0,
+                    help="Choose from GEMINI available models. All these models support tool use and parallel tool use."
+                )  
+                if model == "Custom":
+                    model = st.text_input("Enter your custom GEMINI model:", value="", help="Specify your custom model string")  
             elif provider == "GROQ":
                 model = st.selectbox(
                     "Select GROQ Model",
@@ -99,6 +113,17 @@ def render_sidebar():
                 )
                 if openai_api_key:
                     os.environ["OPENAI_API_KEY"] = openai_api_key
+                    
+            elif provider == "Google":
+                gemini_api_key = st.text_input(
+                    "GEMINI API Key",
+                    type="password",
+                    placeholder="Enter your GEMINI API key",
+                    help="Enter your GEMINI API key"
+                    )
+                if gemini_api_key:
+                    os.environ["GEMINI_API_KEY"] = gemini_api_key
+                
             elif provider == "GROQ":
                 groq_api_key = st.text_input(
                     "GROQ API Key",
@@ -110,7 +135,7 @@ def render_sidebar():
                     os.environ["GROQ_API_KEY"] = groq_api_key
             
             # Only show EXA key input if not using Ollama
-            if provider != "Ollama":
+            elif provider != "Ollama":
                 exa_api_key = st.text_input(
                     "EXA API Key",
                     type="password",

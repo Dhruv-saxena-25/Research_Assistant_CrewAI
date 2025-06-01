@@ -18,6 +18,10 @@ def get_llm(selection):
             model=f"ollama/{model}",
         )
     
+    elif provider == "Google":
+        llm = LLM(
+            api_key= st.secrets['GEMINI_API_KEY'],
+            model= f"gemini/{model}")
     else:
         # Map friendly names to concrete model names for OpenAI
         if model == "GPT-3.5":
