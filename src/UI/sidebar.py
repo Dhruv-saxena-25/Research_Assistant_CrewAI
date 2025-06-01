@@ -62,8 +62,8 @@ def render_sidebar():
                 model = st.selectbox(
                     "Select GROQ Model",
                     [
-                        "gemini-1.5-pro",
                         "gemini-1.5-flash",
+                        "gemini-1.5-pro",
                         "gemini-2.0-flash",
                         "gemini-2.5-flash-preview-04-17"
                     ],
@@ -135,7 +135,7 @@ def render_sidebar():
                     os.environ["GROQ_API_KEY"] = groq_api_key
             
             # Only show EXA key input if not using Ollama
-            elif provider != "Ollama":
+            if provider != "Ollama":
                 exa_api_key = st.text_input(
                     "EXA API Key",
                     type="password",
