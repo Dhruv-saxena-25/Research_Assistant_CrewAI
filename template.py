@@ -1,46 +1,44 @@
 import os
 
-# Define the directory and file structure
+# Define the file and folder structure directly at the script's location
 structure = {
-    "research-assistant": {
-        "app.py": "",
-        ".env": "",
-        "requirements.txt": "",
-        "pyproject.toml": "",
-        ".streamlit": {
-            "secrets.toml": ""
-        },
-        "assets": {},  # Empty, placeholder for static files
-        "experiment": {
-            "run.py": ""
-        },
-        "src": {
+    "app.py": "",
+    ".env": "",
+    "requirements.txt": "",
+    "pyproject.toml": "",
+    ".streamlit": {
+        "secrets.toml": ""
+    },
+    "assets": {},  # Empty, placeholder for static files
+    "experiment": {
+        "run.py": ""
+    },
+    "src": {
+        "__init__.py": "",
+        "crew.py": "",
+        "agents": {
             "__init__.py": "",
-            "crew.py": "",
-            "agents": {
-                "__init__.py": "",
-                "agent.py": ""
-            },
-            "llms": {
-                "__init__.py": "",
-                "init_llms.py": ""
-            },
-            "tasks": {
-                "__init__.py": "",
-                "task.py": ""
-            },
-            "tools": {
-                "__init__.py": "",
-                "custum_tool.py": ""
-            },
-            "UI": {
-                "__init__.py": "",
-                "sidebar.py": ""
-            },
-            "utils": {
-                "__init__.py": "",
-                "output_handler.py": ""
-            }
+            "agent.py": ""
+        },
+        "llms": {
+            "__init__.py": "",
+            "init_llms.py": ""
+        },
+        "tasks": {
+            "__init__.py": "",
+            "task.py": ""
+        },
+        "tools": {
+            "__init__.py": "",
+            "custum_tool.py": ""
+        },
+        "UI": {
+            "__init__.py": "",
+            "sidebar.py": ""
+        },
+        "utils": {
+            "__init__.py": "",
+            "output_handler.py": ""
         }
     }
 }
@@ -57,5 +55,6 @@ def create_structure(base_path, tree):
                 f.write(content)
 
 if __name__ == "__main__":
-    create_structure(".", structure)
-    print("✅ Project structure 'research-assistant/' created successfully.")
+    current_dir = os.path.dirname(os.path.abspath(__file__))  # Directory where template.py is located
+    create_structure(current_dir, structure)
+    print("✅ Project structure created successfully in the current directory.")
