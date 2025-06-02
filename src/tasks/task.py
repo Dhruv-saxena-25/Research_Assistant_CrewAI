@@ -1,5 +1,5 @@
 from crewai import Task
-from src.agenets.agent import create_researcher
+from src.agents.agent import create_researcher
 
 def create_research_task(task_description, selection):
     

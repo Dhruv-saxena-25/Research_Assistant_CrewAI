@@ -16,6 +16,52 @@
 - 📱 Responsive and modern UI
 
 ---
+# 🏗️ Architecture
+research-assistant/
+│
+├── app.py
+├── .env
+├── requirements.txt
+├── pyproject.toml
+│
+├── .streamlit/
+│   └── secrets.toml
+│
+├── assets/
+│   └── (your static files go here)
+│
+├── experiment/
+│   └── run.py
+│
+├── src/
+│   ├── __init__.py
+│   ├── crew.py
+│   │
+│   ├── agents/
+│   │   ├── __init__.py
+│   │   └── agent.py
+│   │
+│   ├── llms/
+│   │   ├── __init__.py
+│   │   └── init_llms.py
+│   │
+│   ├── tasks/
+│   │   ├── __init__.py
+│   │   └── task.py
+│   │
+│   ├── tools/
+│   │   ├── __init__.py
+│   │   └── custum_tool.py
+│   │
+│   ├── UI/
+│   │   ├── __init__.py
+│   │   └── sidebar.py
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       └── output_handler.py
+
+---
 
 # ⚙️ Installing Dependencies
 

@@ -29,7 +29,7 @@ def render_sidebar():
     """Render the sidebar and handle API key & model configuration.
     
     The sidebar allows users to:
-    1. Select an LLM provider (OpenAI, GROQ, or Ollama)
+    1. Select an LLM provider (OpenAI, GROQ, Ollama or Gemini)
     2. Choose or input a specific model
     3. Enter necessary API keys
     
@@ -144,6 +144,15 @@ def render_sidebar():
                 )
                 if exa_api_key:
                     os.environ["EXA_API_KEY"] = exa_api_key
+            else:
+                exa_api_key = st.text_input(
+                    "EXA API Key",
+                    type="password",
+                    placeholder="Enter your EXA API key",
+                    help="Enter your EXA API key for web search capabilities"
+                )
+                if exa_api_key:
+                    os.environ["EXA_API_KEY"] = exa_api_key
 
         st.write("")
         with st.expander("ℹ️ About", expanded=False):
@@ -156,7 +165,7 @@ def render_sidebar():
                 Choose your preferred model and enter the required API keys to get started.
                 
                 **Note on Model Selection:**
-                - OpenAI and GROQ models provide full functionality with web search capabilities
+                - OpenAI, Gemini and GROQ models provide full functionality with web search capabilities
                 - Ollama models run locally but have limited function-calling abilities
                   and will rely more on their base knowledge
                 

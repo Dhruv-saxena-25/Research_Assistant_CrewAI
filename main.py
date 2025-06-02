@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from src.UI.sidebar import render_sidebar
-from src.agenets.agent import create_researcher
+from src.agents.agent import create_researcher
 from src.tasks.task import create_research_task
 from src.crew import run_research
 from src.utils.output_handler import capture_output

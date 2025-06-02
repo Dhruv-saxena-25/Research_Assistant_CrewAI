@@ -1,6 +1,6 @@
 from crewai import Crew, Process
 from src.tasks.task import create_research_task
-from src.agenets.agent import create_researcher
+from src.agents.agent import create_researcher
 
 
 
