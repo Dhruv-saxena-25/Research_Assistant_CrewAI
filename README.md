@@ -17,6 +17,7 @@
 
 ---
 # 🏗️ Architecture
+<pre>
 research-assistant/
 │
 ├── app.py
@@ -61,6 +62,7 @@ research-assistant/
 │       ├── __init__.py
 │       └── output_handler.py
 
+</pre>
 ---
 
 # ⚙️ Installing Dependencies
