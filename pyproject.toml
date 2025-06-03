@@ -3,7 +3,8 @@ name = "research_assistant"
 version = "0.1.0"
 description = "Research Assistant"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
+
 dependencies = [
     "crewai",
     "crewai-tools",
@@ -12,3 +13,10 @@ dependencies = [
     "requests",
     "python-dotenv"
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
